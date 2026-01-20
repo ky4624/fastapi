@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中间件</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script>
+        $("h1").click(function(){
+            $.ajax({
+                url: "http://127.0.0.1:8020/user",
+                type: "GET",
+                success: function(data){
+                    console.log(data.message);
+                    $("h1").text("hello " + data.message);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>用户名:{{username}}</p>
+    <p>英文名:{{username2|lower}}</p>  <!-- 注释 过滤器  转小写-->
+    <p>书籍:</p>
+    <ul>
+        {% for book in books %}
+        <li>{{book}}</li>
+        {% endfor %}
+    </ul>
+    <p>圆周率:{{pi|round(2)}}</p> <!-- 注释 过滤器  保留2位小数-->
+    <p>影视区:</p>
+    {% if age >=18%}
+        <ul>
+            <li>《{{books[0]}}》,作者:{{authors[books[0]]}}</li>
+            <li>《{{books[1]}}》,作者:{{authors[books[1]]}}</li>
+        </ul>
+        
+    {% else %}
+        <ul>
+            <li>《{{books[2]}}》,作者:{{authors[books[2]]}}</li>
+            <li>《{{books[3]}}》,作者:{{authors[books[3]]}}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
