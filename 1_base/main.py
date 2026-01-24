@@ -5,8 +5,8 @@ from apps.app02.urls import user
 
 app = FastAPI()
 
-app.include_router(shop, prefix="/shop",tags=["购物中心"])
-app.include_router(user, prefix="/user",tags=["用户中心"])
+app.include_router(shop, prefix="/shop",tags=["购物中心1"])
+app.include_router(user, prefix="/user",tags=["用户中心1"])
 
 
 if __name__ == "__main__":
